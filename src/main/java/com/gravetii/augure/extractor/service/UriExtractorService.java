@@ -12,10 +12,8 @@ import org.apache.commons.lang3.StringUtils;
 
 public class UriExtractorService {
   private List<IUriExtractor> extractors;
-  private LinkPreview preview;
 
-  public UriExtractorService(String url) {
-    this.preview = new LinkPreview(url);
+  public UriExtractorService() {
     register(new UriTwitterExtractor());
     register(new UriOpenGraphExtractor());
     register(new UriMetaExtractor());
@@ -61,20 +59,18 @@ public class UriExtractorService {
     return thumbnailUrl;
   }
 
-  public LinkPreview getMetaInfo(UriDocument document) {
-    if (document != null) {
-      for (IUriExtractor extractor: extractors) {
-        LinkPreview l = extractor.getMetaInfo(document);
-        if (l != null) {
-          preview = preview.merge(l);
-        }
+  public LinkPreview get(UriDocument document) {
+    LinkPreview preview = new LinkPreview(document.getUrl());
+    for (IUriExtractor extractor: extractors) {
+      LinkPreview l = extractor.getMetaInfo(document);
+      if (l != null) {
+        preview = preview.merge(l);
       }
-
-      String thumbnailUrl = getThumbnailUrl(document, preview.getThumbnailUrl());
-      this.preview.setThumbnailUrl(thumbnailUrl);
-      this.preview.setProviderName(document.fetchProviderName());
     }
 
+    String thumbnailUrl = getThumbnailUrl(document, preview.getThumbnailUrl());
+    preview.setThumbnailUrl(thumbnailUrl);
+    preview.setProviderName(document.fetchProviderName());
     return preview;
   }
 }

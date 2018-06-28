@@ -1,12 +1,15 @@
 package com.gravetii.augure;
 
+import com.gravetii.augure.extractor.service.UriExtractorService;
 import com.gravetii.augure.pojo.LinkPreview;
 import com.gravetii.augure.pojo.UriDocument;
 import org.apache.commons.lang3.StringUtils;
 
 public class Augure {
-  public Augure() {
+  private UriExtractorService service;
 
+  public Augure() {
+    this.service = new UriExtractorService();
   }
 
   private static String getFullUrl(String url) {
@@ -37,7 +40,7 @@ public class Augure {
   public LinkPreview get(String url) throws Exception {
     url = getFullUrl(url);
     UriDocument document = new UriDocument(url);
-    return document.getMetaInfo();
+    return service.get(document);
   }
 
   public static void main(String[] args) throws Exception {

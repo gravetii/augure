@@ -1,7 +1,6 @@
 package com.gravetii.augure.pojo;
 
 import com.google.common.net.InternetDomainName;
-import com.gravetii.augure.extractor.service.UriExtractorService;
 import java.net.URI;
 import java.util.Collections;
 import java.util.Iterator;
@@ -11,17 +10,18 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
+/**
+ * Created by sandeepd on 28/06/18.
+ */
 public class UriDocument {
   private static final String USER_AGENT = "Mozilla/5.0";
   private static final String REFERRER = "http://www.google.com";
 
-  private UriExtractorService service;
   private String url;
   private Document document;
 
   public UriDocument(String url) throws Exception {
     this.url = url;
-    this.service = new UriExtractorService(url);
     this.document = Jsoup
         .connect(url)
         .userAgent(USER_AGENT)
@@ -33,10 +33,6 @@ public class UriDocument {
 
   public String getUrl() {
     return url;
-  }
-
-  public LinkPreview getMetaInfo() {
-    return service.getMetaInfo(this);
   }
 
   public String fetchLocation() {
@@ -67,6 +63,7 @@ public class UriDocument {
         if (url.startsWith("https://")) {
           url = url.substring(8, url.length());
         }
+
         providerName = InternetDomainName.from(url).topPrivateDomain().toString();
       } catch (Exception e1) {
         System.err.println("Error in URI decoding - " + url);
@@ -125,7 +122,6 @@ public class UriDocument {
   @Override
   public String toString() {
     return "UriDocument{" +
-        "service=" + service +
         ", url='" + url + '\'' +
         ", document=" + document +
         '}';

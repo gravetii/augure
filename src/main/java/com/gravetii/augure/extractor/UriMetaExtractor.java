@@ -17,6 +17,7 @@ public class UriMetaExtractor implements IUriExtractor {
     if (StringUtils.isEmpty(title)) {
       title = document.getMetaInfo("meta[name=title]", "content");
     }
+
     String thumbnailUrl = document.getMetaInfo("meta[name=image]", "content");
     String description = document.getMetaInfo("meta[name=description]", "content");
     preview.setTitle(title)
