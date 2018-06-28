@@ -4,10 +4,11 @@ import com.gravetii.augure.pojo.LinkPreview;
 import com.gravetii.augure.pojo.UriDocument;
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * Created by sandeepd on 28/06/18.
- */
 public class Augure {
+  public Augure() {
+
+  }
+
   private static String getFullUrl(String url) {
     url = url.trim();
     url = deCapitalize(url);

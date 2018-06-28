@@ -2,9 +2,6 @@ package com.gravetii.augure.pojo;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * Created by sandeepd on 28/06/18.
- */
 public class LinkPreview {
   private String title;
   private String providerName;

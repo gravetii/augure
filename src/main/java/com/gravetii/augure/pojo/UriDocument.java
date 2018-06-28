@@ -11,9 +11,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-/**
- * Created by sandeepd on 28/06/18.
- */
 public class UriDocument {
   private static final String USER_AGENT = "Mozilla/5.0";
   private static final String REFERRER = "http://www.google.com";
