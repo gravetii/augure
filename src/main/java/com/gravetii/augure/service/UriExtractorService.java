@@ -1,4 +1,4 @@
-package com.gravetii.augure.extractor.service;
+package com.gravetii.augure.service;
 
 import com.gravetii.augure.extractor.IUriExtractor;
 import com.gravetii.augure.extractor.UriMetaExtractor;

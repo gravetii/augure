@@ -2,9 +2,6 @@ package com.gravetii.augure.util;
 
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * Created by sandeepd on 28/06/18.
- */
 public class Utils {
   public static String getFullUrl(String url) {
     url = url.trim();

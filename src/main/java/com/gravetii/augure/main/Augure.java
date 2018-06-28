@@ -1,6 +1,6 @@
 package com.gravetii.augure.main;
 
-import com.gravetii.augure.extractor.service.UriExtractorService;
+import com.gravetii.augure.service.UriExtractorService;
 import com.gravetii.augure.pojo.LinkPreview;
 import com.gravetii.augure.pojo.UriDocument;
 import com.gravetii.augure.util.Utils;
