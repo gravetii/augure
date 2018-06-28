@@ -6,10 +6,12 @@ import com.gravetii.augure.pojo.LinkPreview;
 import com.gravetii.augure.pojo.UriDocument;
 import com.gravetii.augure.util.Utils;
 import com.gravetii.augure.util.exception.AugureException;
+import javax.annotation.concurrent.ThreadSafe;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@ThreadSafe
 public class Augure {
   private static final Logger logger = LoggerFactory.getLogger(Augure.class.getCanonicalName());
 
