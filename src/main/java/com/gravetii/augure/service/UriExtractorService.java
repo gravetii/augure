@@ -10,8 +10,13 @@ import com.gravetii.augure.pojo.UriDocument;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UriExtractorService {
+  private static final Logger logger = LoggerFactory
+      .getLogger(UriExtractorService.class.getCanonicalName());
+
   private List<IUriExtractor> extractors;
 
   public UriExtractorService() {
@@ -19,12 +24,14 @@ public class UriExtractorService {
     register(new UriTwitterExtractor());
     register(new UriOpenGraphExtractor());
     register(new UriMetaExtractor());
+    logger.info("Finished registering URI extractors");
   }
 
   private void register(IUriExtractor extractor) {
     if (this.extractors == null) {
       this.extractors = new ArrayList<>();
     }
+
     extractors.add(extractor);
   }
 

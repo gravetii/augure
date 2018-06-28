@@ -7,10 +7,6 @@ public class UriOpenGraphExtractor implements IUriExtractor {
 
   @Override
   public LinkPreview getMetaInfo(UriDocument document) {
-    if (document == null) {
-      return null;
-    }
-
     LinkPreview preview = new LinkPreview(document.getUrl());
     String title = getMetaContent(document, "title");
     String description = getMetaContent(document, "description");

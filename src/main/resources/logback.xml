@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>
+        %d{"E MMM dd HH:mm:ss,SSS yyyy"} %c:%L %-4p %t %m%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <appender name="async-stdout" class="ch.qos.logback.classic.AsyncAppender"
+    queueSize="20000">
+    <appender-ref ref="stdout" />
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="async-stdout" />
+  </root>
+</configuration>

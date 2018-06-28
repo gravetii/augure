@@ -23,10 +23,6 @@ public class Utils {
   }
 
   public static String deCapitalize(String str) {
-    if (StringUtils.isEmpty(str)) {
-      return str;
-    }
-
     char c[] = str.toCharArray();
     c[0] = Character.toLowerCase(c[0]);
     return new String(c);

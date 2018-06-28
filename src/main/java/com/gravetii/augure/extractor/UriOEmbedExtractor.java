@@ -15,10 +15,6 @@ public class UriOEmbedExtractor implements IUriExtractor
 
   @Override
   public LinkPreview getMetaInfo(UriDocument document) {
-    if (document == null) {
-      return null;
-    }
-
     String oEmbedUrl = document.getMetaInfo("link[type=application/json+oembed]", "href");
     if (oEmbedUrl == null) {
       return null;
