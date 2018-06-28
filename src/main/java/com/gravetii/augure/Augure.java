@@ -1,4 +1,4 @@
-package com.gravetii.augure.main;
+package com.gravetii.augure;
 
 import com.gravetii.augure.service.UriExtractorService;
 import com.gravetii.augure.pojo.LinkPreview;
