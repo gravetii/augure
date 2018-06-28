@@ -2,6 +2,7 @@ package com.gravetii.augure.service;
 
 import com.gravetii.augure.extractor.IUriExtractor;
 import com.gravetii.augure.extractor.UriMetaExtractor;
+import com.gravetii.augure.extractor.UriOEmbedExtractor;
 import com.gravetii.augure.extractor.UriOpenGraphExtractor;
 import com.gravetii.augure.extractor.UriTwitterExtractor;
 import com.gravetii.augure.pojo.LinkPreview;
@@ -14,6 +15,7 @@ public class UriExtractorService {
   private List<IUriExtractor> extractors;
 
   public UriExtractorService() {
+    register(new UriOEmbedExtractor());
     register(new UriTwitterExtractor());
     register(new UriOpenGraphExtractor());
     register(new UriMetaExtractor());
