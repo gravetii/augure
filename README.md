@@ -3,7 +3,7 @@
 ## What is it?
 Augure is a service that '_tries its best_' to provide rich previews for web links.
 
-## How is it useful for me?
+## How is it useful to me?
 You can use **Augure** to display contextual rich previews for web links anywhere inside your application. Recipients of the link can then check the data of the preview and ascertain whether they want to actually click the link or not. This also works the other way round in that it can pique the user's interest to open the link. 
 
 ## Usage
