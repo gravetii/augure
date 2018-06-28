@@ -7,9 +7,14 @@ import com.gravetii.augure.pojo.OEmbedResponse;
 import com.gravetii.augure.pojo.UriDocument;
 import com.gravetii.augure.util.http.HttpClient;
 import com.gravetii.augure.util.http.HttpClientRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UriOEmbedExtractor implements IUriExtractor
 {
+  private static final Logger logger = LoggerFactory
+      .getLogger(UriOEmbedExtractor.class.getCanonicalName());
+
   private static final ObjectMapper mapper = new ObjectMapper()
       .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
@@ -26,23 +31,18 @@ public class UriOEmbedExtractor implements IUriExtractor
       LinkPreview preview = new LinkPreview(document.getUrl());
       preview.setTitle(response.getTitle())
           .setThumbnailUrl(response.getThumbnailUrl());
-
       return preview;
     }
     catch (Exception e) {
-      return null;
+      logger.warn("Error while reading oEmbed data for url {}", oEmbedUrl, e);
     }
 
+    return null;
   }
 
   private String fetchOEmbedData(String oEmbedUrl) throws Exception {
-    if (oEmbedUrl == null) {
-      return null;
-    }
-
     HttpClientRequest.Builder builder = HttpClientRequest.builder().setUrl(oEmbedUrl)
         .setSsl(false).setContentType("application/json").setTimeout(5000);
-    String data = HttpClient.getData(builder.build());
-    return data;
+    return HttpClient.getData(builder.build());
   }
 }

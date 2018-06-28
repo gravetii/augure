@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 import org.apache.commons.lang3.StringUtils;
 
 public class HttpClient {
-  public static HttpURLConnection getHttpConnection(HttpClientRequest request) throws Exception {
+  private static HttpURLConnection getHttpConnection(HttpClientRequest request) throws Exception {
     URL url = new URL(request.getUrl());
     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -44,20 +44,15 @@ public class HttpClient {
   }
 
   public static String getData(HttpClientRequest request) throws Exception {
-    try {
-      request.setRequestMethod("GET");
-      HttpURLConnection httpConnection = getHttpConnection(request);
-      Map<String, String> headers = request.getHeaders();
-      if (headers != null) {
-        for (Entry<String, String> header : request.getHeaders().entrySet()) {
-          httpConnection.setRequestProperty(header.getKey(), header.getValue());
-        }
+    request.setRequestMethod("GET");
+    HttpURLConnection httpConnection = getHttpConnection(request);
+    Map<String, String> headers = request.getHeaders();
+    if (headers != null) {
+      for (Entry<String, String> header : request.getHeaders().entrySet()) {
+        httpConnection.setRequestProperty(header.getKey(), header.getValue());
       }
+    }
 
-      return getResponse(httpConnection);
-    }
-    catch (Exception e) {
-      throw new Exception("Error getting data. Error : " + e.getMessage(), e);
-    }
+    return getResponse(httpConnection);
   }
 }
