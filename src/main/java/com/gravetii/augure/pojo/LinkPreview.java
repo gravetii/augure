@@ -1,4 +1,4 @@
-package com.gravetii.commons.pojo;
+package com.gravetii.augure.pojo;
 
 import org.apache.commons.lang3.StringUtils;
 

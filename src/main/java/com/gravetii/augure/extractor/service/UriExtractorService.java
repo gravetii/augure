@@ -1,8 +1,11 @@
-package com.gravetii.commons.extractor.service;
+package com.gravetii.augure.extractor.service;
 
-import com.gravetii.commons.extractor.IUriExtractor;
-import com.gravetii.commons.pojo.LinkPreview;
-import com.gravetii.commons.pojo.UriDocument;
+import com.gravetii.augure.extractor.IUriExtractor;
+import com.gravetii.augure.extractor.UriMetaExtractor;
+import com.gravetii.augure.extractor.UriOpenGraphExtractor;
+import com.gravetii.augure.extractor.UriTwitterExtractor;
+import com.gravetii.augure.pojo.LinkPreview;
+import com.gravetii.augure.pojo.UriDocument;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
@@ -16,6 +19,9 @@ public class UriExtractorService {
 
   public UriExtractorService(String url) {
     this.preview = new LinkPreview(url);
+    register(new UriTwitterExtractor());
+    register(new UriOpenGraphExtractor());
+    register(new UriMetaExtractor());
   }
 
   private void register(IUriExtractor extractor) {

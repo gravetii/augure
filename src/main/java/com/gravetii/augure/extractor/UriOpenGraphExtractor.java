@@ -1,12 +1,12 @@
-package com.gravetii.commons.extractor;
+package com.gravetii.augure.extractor;
 
-import com.gravetii.commons.pojo.LinkPreview;
-import com.gravetii.commons.pojo.UriDocument;
+import com.gravetii.augure.pojo.LinkPreview;
+import com.gravetii.augure.pojo.UriDocument;
 
 /**
  * Created by sandeepd on 28/06/18.
  */
-public class UriTwitterExtractor implements IUriExtractor {
+public class UriOpenGraphExtractor implements IUriExtractor {
 
   @Override
   public LinkPreview getMetaInfo(UriDocument document) {
@@ -18,22 +18,19 @@ public class UriTwitterExtractor implements IUriExtractor {
     String title = getMetaContent(document, "title");
     String description = getMetaContent(document, "description");
     String thumbnailUrl = getMetaContent(document, "image");
-    if (thumbnailUrl == null) {
-      thumbnailUrl = getMetaContent(document, "image:src");
-    }
-
-    preview.setTitle(title)
+    preview.setThumbnailUrl(thumbnailUrl)
         .setDescription(description)
-        .setThumbnailUrl(thumbnailUrl);
+        .setTitle(title);
 
     return preview;
   }
 
   private String getMetaContent(UriDocument document, String tag) {
-    String sb = "meta[name=twitter:" + tag + "]";
+
+    String sb = "meta[name=og:" + tag + "]";
     String data = document.getMetaInfo(sb, "content");
     if (data == null) {
-      sb = "meta[property=twitter:" + tag + "]";
+      sb = "meta[property=og:" + tag + "]";
       data = document.getMetaInfo(sb, "content");
     }
     return data;

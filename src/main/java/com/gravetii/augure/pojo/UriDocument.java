@@ -1,7 +1,7 @@
-package com.gravetii.commons.pojo;
+package com.gravetii.augure.pojo;
 
 import com.google.common.net.InternetDomainName;
-import com.gravetii.commons.extractor.service.UriExtractorService;
+import com.gravetii.augure.extractor.service.UriExtractorService;
 import java.net.URI;
 import java.util.Collections;
 import java.util.Iterator;

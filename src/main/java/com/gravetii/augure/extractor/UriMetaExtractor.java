@@ -1,7 +1,7 @@
-package com.gravetii.commons.extractor;
+package com.gravetii.augure.extractor;
 
-import com.gravetii.commons.pojo.LinkPreview;
-import com.gravetii.commons.pojo.UriDocument;
+import com.gravetii.augure.pojo.LinkPreview;
+import com.gravetii.augure.pojo.UriDocument;
 import org.apache.commons.lang3.StringUtils;
 
 /**
