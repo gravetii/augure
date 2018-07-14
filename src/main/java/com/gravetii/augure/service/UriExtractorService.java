@@ -20,6 +20,7 @@ public class UriExtractorService {
   private List<IUriExtractor> extractors;
 
   public UriExtractorService() {
+    this.extractors = new ArrayList<>();
     register(new UriOEmbedExtractor());
     register(new UriTwitterExtractor());
     register(new UriOpenGraphExtractor());
@@ -28,10 +29,6 @@ public class UriExtractorService {
   }
 
   private void register(IUriExtractor extractor) {
-    if (this.extractors == null) {
-      this.extractors = new ArrayList<>();
-    }
-
     extractors.add(extractor);
   }
 
