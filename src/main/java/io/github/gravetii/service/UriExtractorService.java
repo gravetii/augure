@@ -13,6 +13,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * This class performs the actual preview extraction process for the URLs.
+ */
 public class UriExtractorService {
   private static final Logger logger = LoggerFactory
       .getLogger(UriExtractorService.class.getCanonicalName());
@@ -28,6 +31,12 @@ public class UriExtractorService {
     logger.info("Finished registering URI extractors");
   }
 
+  /**
+   * Register a certain {@link IUriExtractor} that is capable of extracting the meta info of a URL.
+   * The extractor then participates in the preview extraction process
+   * performed by the {@link UriExtractorService}.
+   * @param extractor The {@link IUriExtractor} to be registered.
+   */
   private void register(IUriExtractor extractor) {
     extractors.add(extractor);
   }

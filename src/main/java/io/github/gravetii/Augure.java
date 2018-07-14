@@ -22,6 +22,12 @@ public class Augure {
     logger.info("Successfully initialised Augure");
   }
 
+  /**
+   * This method is used to get the {@link LinkPreview} for a given URL.
+   * @param url the URL for which to get the preview.
+   * @return The {@link LinkPreview} of the supplied URL.
+   * @throws Exception
+   */
   public LinkPreview get(String url) throws Exception {
     try {
       Preconditions.checkArgument(StringUtils.isNotEmpty(url),
