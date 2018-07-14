@@ -1,7 +1,7 @@
-package com.gravetii.augure.extractor;
+package io.github.gravetii.extractor;
 
-import com.gravetii.augure.pojo.LinkPreview;
-import com.gravetii.augure.pojo.UriDocument;
+import io.github.gravetii.pojo.LinkPreview;
+import io.github.gravetii.pojo.UriDocument;
 
 public class UriOpenGraphExtractor implements IUriExtractor {
 

@@ -1,12 +1,12 @@
-package com.gravetii.augure.service;
+package io.github.gravetii.service;
 
-import com.gravetii.augure.extractor.IUriExtractor;
-import com.gravetii.augure.extractor.UriMetaExtractor;
-import com.gravetii.augure.extractor.UriOEmbedExtractor;
-import com.gravetii.augure.extractor.UriOpenGraphExtractor;
-import com.gravetii.augure.extractor.UriTwitterExtractor;
-import com.gravetii.augure.pojo.LinkPreview;
-import com.gravetii.augure.pojo.UriDocument;
+import io.github.gravetii.extractor.IUriExtractor;
+import io.github.gravetii.extractor.UriMetaExtractor;
+import io.github.gravetii.extractor.UriOEmbedExtractor;
+import io.github.gravetii.extractor.UriOpenGraphExtractor;
+import io.github.gravetii.extractor.UriTwitterExtractor;
+import io.github.gravetii.pojo.LinkPreview;
+import io.github.gravetii.pojo.UriDocument;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;

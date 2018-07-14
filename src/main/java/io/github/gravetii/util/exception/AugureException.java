@@ -1,4 +1,4 @@
-package com.gravetii.augure.util.exception;
+package io.github.gravetii.util.exception;
 
 /**
  * Created by sandeepd on 28/06/18.

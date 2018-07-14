@@ -1,12 +1,12 @@
-package com.gravetii.augure.extractor;
+package io.github.gravetii.extractor;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gravetii.augure.pojo.LinkPreview;
-import com.gravetii.augure.pojo.OEmbedResponse;
-import com.gravetii.augure.pojo.UriDocument;
-import com.gravetii.augure.util.http.HttpClient;
-import com.gravetii.augure.util.http.HttpClientRequest;
+import io.github.gravetii.pojo.LinkPreview;
+import io.github.gravetii.pojo.OEmbedResponse;
+import io.github.gravetii.pojo.UriDocument;
+import io.github.gravetii.util.http.HttpClient;
+import io.github.gravetii.util.http.HttpClientRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,4 +1,4 @@
-package com.gravetii.augure.util;
+package io.github.gravetii.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.gravetii.augure.pojo;
+package io.github.gravetii.pojo;
 
 import com.google.common.net.InternetDomainName;
 import java.net.URI;

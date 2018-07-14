@@ -1,4 +1,4 @@
-package com.gravetii.augure.util.http;
+package io.github.gravetii.util.http;
 
 import java.util.Map;
 

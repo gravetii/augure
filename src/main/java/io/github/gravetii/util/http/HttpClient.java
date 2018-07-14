@@ -1,6 +1,6 @@
-package com.gravetii.augure.util.http;
+package io.github.gravetii.util.http;
 
-import com.gravetii.augure.util.Utils;
+import io.github.gravetii.util.Utils;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;

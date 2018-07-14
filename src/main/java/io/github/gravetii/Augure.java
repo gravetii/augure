@@ -1,11 +1,11 @@
-package com.gravetii.augure;
+package io.github.gravetii;
 
 import com.google.common.base.Preconditions;
-import com.gravetii.augure.service.UriExtractorService;
-import com.gravetii.augure.pojo.LinkPreview;
-import com.gravetii.augure.pojo.UriDocument;
-import com.gravetii.augure.util.Utils;
-import com.gravetii.augure.util.exception.AugureException;
+import io.github.gravetii.service.UriExtractorService;
+import io.github.gravetii.pojo.LinkPreview;
+import io.github.gravetii.pojo.UriDocument;
+import io.github.gravetii.util.Utils;
+import io.github.gravetii.util.exception.AugureException;
 import javax.annotation.concurrent.ThreadSafe;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package com.gravetii.augure.pojo;
+package io.github.gravetii.pojo;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
